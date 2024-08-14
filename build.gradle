@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "com.diffplug.spotless" version "6.10.0"
 }
 
 group = 'org.example'
@@ -10,6 +11,7 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.javalin:javalin:6.2.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }
@@ -21,5 +23,15 @@ test {
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+spotless {
+    java {
+        target(fileTree(rootDir) {
+            include("src/**/*.java")
+        })
+        removeUnusedImports()
+        googleJavaFormat("1.15.0")
     }
 }
