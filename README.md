@@ -18,7 +18,6 @@ curl --request POST \
 
 ## TODO
 
-- create user
 - create account
 - deposit
 - withdraw
