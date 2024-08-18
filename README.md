@@ -1,4 +1,6 @@
-# arthur
+# Arthur
+
+A minimalistic API written in Java without using frameworks.
 
 # Endpoints
 
@@ -21,11 +23,3 @@ curl --request POST \
 - deposit
 - withdraw
 - transfer
-
-#### tech TODOs
-
-- add flyway
-- add open api
-- add jooq
-- add guice
-- add kafka
